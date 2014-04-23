@@ -5,15 +5,19 @@
 auto lo
 iface lo inet loopback
 
-# The primary network interface - static ip
-#allow-hotplug eth0
-iface eth0 inet static
-address 192.168.1.48
-netmask 255.255.255.0
-gateway 192.168.1.1
-
+# The primary network interface
+allow-hotplug eth0
+#iface eth0 inet dhcp
 # Example to keep MAC address between reboots
 #hwaddress ether DE:AD:BE:EF:CA:FE
+
+## added mjp 2015.08.08
+#auto eth0
+iface eth0 inet static
+    address 192.168.1.80
+    netmask 255.255.255.0
+    gateway 192.168.1.1
+
 
 # The secondary network interface
 #allow-hotplug eth1
